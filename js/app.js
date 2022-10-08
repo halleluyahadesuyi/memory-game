@@ -38,6 +38,8 @@ function shuffle(array) {
  */
 
 const deckOfCards = document.querySelector('.deck')
+let cardClickCount = 0
+let evenCount = 0
 
 
 function toggleCard(event) {
@@ -48,6 +50,14 @@ function toggleCard(event) {
 deckOfCards.addEventListener('click', function(event) {
     toggleCard(event)
     // console.log(event.target.firstElementChild)
+
+    cardClickCount += 1
+    evenCount = cardClickCount % 2
+
+    // console.log(cardClickCount)
+    if (evenCount === 0) {
+        console.log('yeeeees')
+    }
 
     const cardIcon = []
 
