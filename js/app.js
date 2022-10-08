@@ -48,6 +48,12 @@ function toggleCard(event) {
     event.target.classList.toggle('show')
 }
 
+function cardsMatching(card1, card2) {
+    if (card1 === card2) {
+        console.log('match')
+    }
+}
+
 deckOfCards.addEventListener('click', function(event) {
     const eventTargetChild = event.target.firstElementChild
     const childClassName = eventTargetChild.className
@@ -55,20 +61,27 @@ deckOfCards.addEventListener('click', function(event) {
 
     console.log(cardIcon)
 
-    for (let i = 0; i < cardIcon.length; i++) {
-        cardClickCount++
-        evenCount[i] = cardClickCount % 2
+    for (let i = 0; i < 2; i++) {
         
-        if (evenCount === 0) {
-            console.log('yeeeees')
-            if (cardIcon[cardClickCount]) {
-    
-            }
-        } else {
-            console.log('nayyyy')
-        }
     }
+    
+    cardClickCount++
+    let previousClick = cardClickCount - 1
+    evenCount = cardClickCount % 2
 
+    if (evenCount === 0) {
+        // if (cardIcon[0] === cardIcon[1]) {
+        //     console.log('match')
+        // }
+        // if (cardIcon[2] === cardIcon[3]) {
+        //     console.log('match')
+        // }
+        cardsMatching(cardIcon[previousClick], cardIcon[cardClickCount])
+        console.log('yayyyy')
+    }
+    // if (cardClickCount >= 3 && cardClickCount < 5 && evenCount === 0) {
+    //     cardsMatching(cardIcon[2], cardIcon[3])
+    // }
 
     toggleCard(event)
     // console.log(event.target.firstElementChild)
@@ -76,9 +89,9 @@ deckOfCards.addEventListener('click', function(event) {
 
     // console.log(cardClickCount)
 
-    if (toggleCard) {           
-        cardIcon[0] = event.target.firstElementChild
-        console.log(cardIcon[0])
-    }
+    // if (toggleCard) {           
+    //     cardIcon[0] = event.target.firstElementChild
+    //     console.log(cardIcon[0])
+    // }
     
 })
