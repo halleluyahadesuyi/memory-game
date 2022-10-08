@@ -51,19 +51,30 @@ function toggleCard(event) {
 deckOfCards.addEventListener('click', function(event) {
     const eventTargetChild = event.target.firstElementChild
     const childClassName = eventTargetChild.className
-    cardClickCount += 1
-    evenCount = cardClickCount % 2
+    cardIcon.push(childClassName)
+
+    console.log(cardIcon)
+
+    for (let i = 0; i < cardIcon.length; i++) {
+        cardClickCount++
+        evenCount[i] = cardClickCount % 2
+        
+        if (evenCount === 0) {
+            console.log('yeeeees')
+            if (cardIcon[cardClickCount]) {
+    
+            }
+        } else {
+            console.log('nayyyy')
+        }
+    }
+
 
     toggleCard(event)
     // console.log(event.target.firstElementChild)
 
 
     // console.log(cardClickCount)
-    if (evenCount === 0) {
-        console.log('yeeeees')
-    } else {
-        console.log('nayyyy')
-    }
 
     if (toggleCard) {           
         cardIcon[0] = event.target.firstElementChild
