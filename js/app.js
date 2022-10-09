@@ -48,9 +48,10 @@ function toggleCard(event) {
     event.target.classList.toggle('show')
 }
 
-function cardsMatching(card1, card2) {
-    if (card1 === card2) {
-        console.log('match')
+function cardsMatchTest(card1, card2, event) {
+    if (card1 !== card2) {
+        console.log('not match')
+        event.target.classList.remove('open', 'show')
     }
 }
 
@@ -76,11 +77,11 @@ deckOfCards.addEventListener('click', function(event) {
         // if (cardIcon[2] === cardIcon[3]) {
         //     console.log('match')
         // }
-        cardsMatching(cardIcon[previousClick], cardIcon[cardClickCount])
+        cardsMatchTest(cardIcon[previousClick], cardIcon[cardClickCount], event)
         console.log('yayyyy')
     }
     // if (cardClickCount >= 3 && cardClickCount < 5 && evenCount === 0) {
-    //     cardsMatching(cardIcon[2], cardIcon[3])
+    //     cardsMatchTest(cardIcon[2], cardIcon[3])
     // }
 
     toggleCard(event)
