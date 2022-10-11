@@ -48,10 +48,12 @@ const cardsArray = [
 // Render Shuffled Cards Array
 renderShuffledCardsArray();
 
+// Save game interface container in variable
 const gameInterface = select('.container');
 
 gameInterface.addEventListener('click', commenceGamePlay());
 
+// Function to commence the game
 function commenceGamePlay() {
     return event => {
         if (gameInterfaceStatic) return;
@@ -93,7 +95,7 @@ function renderShuffledCardsArray() {
     }, shuffledCardsDeck);
 }
 
-// Function to save cards when opened
+// Function to store cards when opened
 function displayCard(event) {
     const cardSelected = event.target;
     if (cardSelected.className === 'card') {
@@ -215,59 +217,67 @@ function starsRatingEquivalent() {
 function restartGamePlay(event) {
     const replay = event.target;
     const givenReplayBtn = replay.className === 'fa fa-repeat';
-    const newReplayBtn) {
-        resetGame();
+    const newReplayBtn = replayButton.className === 'replay-btn';
+    if (givenReplayBtn || newReplayBtn) {
+      gameReset();
     }
 }
 
+// Function to close game modal interface
 function closeModalInterface(event) {
-    const closeButton = event.target;
-    if (closeButton.className === 'modal-close-btn') {
-        dismissModal();
+    const closeBtn = event.target;
+    if (closeBtn.className === 'close-btn') {
+        removeModal();
     }
 }
 
-function dismissModal() {
+// Function to remove modal
+function removeModal() {
     select('.game-over-container').style.display = 'none';
 }
 
-// Reset/Restart Game
-function resetGame() {
+// Function to start game all over again
+function gameReset() {
     if (gameEnding) {
-        dismissModal();
+        removeModal();
     }
-    resetCardState();
+
+    starsReset();
+    movesReset();
+    timeReset();
+    cardReset();
     renderShuffledCardsArray();
-    resetStars();
-    resetTime();
-    resetMoves();
-    gameEnding = false;
     cardsMatching = 0;
+    gameEnding = false;
 }
 
-function resetMoves() {
+// Function to reset stars
+function starsReset() {
+    stars = 3;
+    playerStarRating.forEach(starRender => {
+        starRender.firstElementChild.style.visibility = 'initial';
+    });
+}
+
+// Function to reset moves
+function movesReset() {
     clicksCount = 0;
     moves = 0;
     playerMoves.innerHTML = ` ${moves}`;
 }
 
-function resetTime() {
+// Function to reset time
+function timeReset() {
     clearInterval(timeCount);
-    secondsCount = 0;
     minutesCount = 0;
-    seconds.innerHTML = `0${secondsCount}`;
+    secondsCount = 0;
     minutes.innerHTML = minutesCount;
+    seconds.innerHTML = `0${secondsCount}`;
     hasTimeCommenced = false;
 }
 
-function resetStars() {
-    stars = 3;
-    playerStarRating.forEach(star => {
-        star.firstElementChild.style.visibility = 'initial';
-    });
-}
-
-function resetCardState() {
+// Function to reset cards in deck
+function cardReset() {
     gameInterfaceStatic = false;
     cardsOpened = [];
     cardIcons.forEach(card => {

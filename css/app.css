@@ -142,6 +142,7 @@ h1 {
     left: 0;
     right: 0;
     width: 325px;
+    max-height: 48%;
     padding: 12px;
     background: #fff;
     margin: 0 auto;
