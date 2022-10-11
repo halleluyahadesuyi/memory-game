@@ -16,6 +16,7 @@ body {
     padding: 0;
 }
 
+/* Start of Game Play Interface */
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
@@ -107,3 +108,97 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.score-panel .timer {
+    float: right;
+    margin-left: 18px;
+}
+
+.show-minutes::after {
+    content: ":"
+}
+/* End of Game Play Interface */
+
+/* Start of Game Over Modal */
+.game-over-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #000;
+    opacity: 0.9;
+    letter-spacing: 0.7px;
+}
+
+.game-over-info {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 325px;
+    padding: 12px;
+    background: #fff;
+    margin: 0 auto;
+    border: 2px dashed #341535;
+    border-radius: 10px;
+}
+
+.game-over-info h1 {
+    text-align: center;
+    font-weight: 900;
+}
+
+.game-over-data {
+    background: #341535;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.game-over-btns {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.close-btn,
+.replay-btn {
+    background: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    padding: 10px 20px;
+}
+
+.close-btn {
+    margin-right: 17px;
+    border: 2px solid #d10e2f;
+    border-radius: 50px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    background: #d10e2f;
+    color: #fff;
+}
+
+.replay-btn {
+    margin-left: 17px;
+    border: 2px solid #206620;
+    border-radius: 50px;
+}
+
+.replay-btn:hover,
+.replay-btn:focus {
+    background: #206620;
+    color: #fff;
+}
+
+.close-btn:active,
+.replay-btn:active {
+    transform: translateY(3px);
+}
+/* End of Game Over Modal */
