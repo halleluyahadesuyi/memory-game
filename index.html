@@ -17,13 +17,18 @@
         </header>
 
         <section class="score-panel">
+            <span class="timer">Time: 
+                <span id="minutes" class="minutes-display">0</span>
+                <span id="seconds" class="seconds-display">00</span>
+            </span>
+
         	<ul class="stars">
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">0</span> Moves
+        	<span class="moves">0</span> Move(s)
 
             <div class="restart">
         		<i class="fa fa-repeat"></i>
@@ -85,12 +90,12 @@
         <!-- Start of Game Over Modal -->
         <section class="game-over-container">
             <div class="game-over-info">
-                <h1>Yes! You did it, Congratulations! 🎉</h1>
+                <h1>You did it! Congratulations! 🎉</h1>
 
                 <div class="game-over-data">
-                    <p>Total Stars:<span id="stars-earned"></span></p>
-                    <p>Total Moves:<span id="moves-made"></span></p>
-                    <p>Total Time:<span id="time-taken"></span></p>
+                    <p>Total Stars:<span id="stars"></span></p>
+                    <p>Total Moves:<span id="moves"></span></p>
+                    <p>Total Time:<span id="time"></span></p>
                 </div>
 
                 <div class="game-over-btns">

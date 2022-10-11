@@ -82,6 +82,10 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.not-matching {
+    background: #dd5757;
+}
+
 /*
  * Styles for the Score Panel
  */
@@ -114,14 +118,14 @@ h1 {
     margin-left: 18px;
 }
 
-.show-minutes::after {
+.minutes-display::after {
     content: ":"
 }
 /* End of Game Play Interface */
 
 /* Start of Game Over Modal */
 .game-over-container {
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
