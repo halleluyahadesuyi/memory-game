@@ -125,7 +125,7 @@ h1 {
 
 /* Start of Game Over Modal */
 .game-over-container {
-    display: none;
+    display: block;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -142,7 +142,7 @@ h1 {
     left: 0;
     right: 0;
     width: 325px;
-    max-height: 48%;
+    max-height: 820px;
     padding: 12px;
     background: #fff;
     margin: 0 auto;
